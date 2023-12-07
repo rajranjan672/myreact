@@ -1,0 +1,78 @@
+.car {
+     /* height: 20% !important */
+    /* margin: auto !important; */
+}
+.car:hover{
+    background-color: rgb(233, 110, 130) !important;
+    transform: scale(1.05); 
+    
+}
+.mycard{
+    justify-content: space-between !important;
+
+}
+
+.editdel {
+    display: inline !important;
+}
+
+.profilebg {
+    background-image: url("https://t4.ftcdn.net/jpg/05/49/86/39/360_F_549863991_6yPKI08MG7JiZX83tMHlhDtd6XLFAMce.jpg");
+
+}
+
+.counter {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('https://images.unsplash.com/photo-1615457938971-3ab61c1c0d57?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+/* @media only screen and (max-width: 600px) {
+    .card{
+
+        height: 800px !important;
+        background-color: rgb(238, 44, 125) !important;
+    }
+} */
+
+/* @media only screen and (min-width: 600px) {
+    .card{
+        height: 100px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .card{
+        height: 120px !important;
+    }
+} */
+
+
+
+.inputt {
+    margin-left: 30% !important;
+    margin-bottom: 10px !important;
+    width: 50% !important;
+    border-radius: 20px;
+
+}
+
+.contents{
+    height: fit-content !important;
+}
+ .delete{
+    float: right ;
+} 
+.edit {
+    float: right !important;
+    margin-right: 2px;
+} 
+
+.delete:hover{
+    background-color: rgb(231, 40, 40) !important;
+    transform: scale(1.01) !important;
+}
+
+
+
