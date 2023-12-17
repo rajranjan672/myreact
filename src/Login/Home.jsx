@@ -26,6 +26,7 @@ const Home = () => {
      }
   return (
     <>
+    <div className="home">
     <div className='container'>
         <div className='row'>
 
@@ -40,8 +41,12 @@ const Home = () => {
           
      
      <div className="my-2 py-1">
-     <h5>Email: {data.email}</h5>
-      <h4>Gender: {data.gender}</h4>
+     <h5><span className='text-danger'>Email:</span>  {data.email}</h5>
+     <h5><span className='text-danger'>Gender:</span>  {data.gender}</h5>
+
+     <h5><span className='text-danger'>Phone:</span>  {data.phone}</h5>
+     <h5><span className='text-danger'>City:</span>  {data.city}</h5>
+
       <div className='d-flex justify-content-center'>
       <i class=" justify-content-center bi bi-instagram"></i>
       <i class="bi bi-twitter-x"></i>
@@ -56,6 +61,8 @@ const Home = () => {
         </div>
    
     </div>
+    </div>
+    
    
     
     </>

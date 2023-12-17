@@ -8,7 +8,9 @@ const Register = () => {
         username: "",
         email: "",
         password: "",
-        gender: ""
+        gender: "",
+        phone: "",
+        city: ""
     })
 
     const navigate = useNavigate()
@@ -65,6 +67,31 @@ const Register = () => {
                         setData({...data, [e.target.name]: e.target.value })}
                          required />
                     </div>
+                    
+                    <div className="form-outline mb-4">
+                      <label className="form-label" htmlFor="phone">Phone</label>
+                      <input type="number" id="phone" name='phone' className="form-control" placeholder='phone'
+                      onChange={(e) => 
+                        setData({...data, [e.target.name]: e.target.value })}
+                         required />
+                    </div>
+                    <div>
+                    <label style={{color:"white"}}  htmlFor="city">Country</label>
+
+                  <select class="form-select" aria-label="Default select example"
+                    name="city" 
+                    id='city'
+                  onChange={(e) => 
+                    setData({...data, [e.target.name]: e.target.value})}
+
+                  >
+                    <option selected value="">Open this select menu</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Surat">Surat</option>
+                  </select>
+                    </div>
+                   
 
                       <div>
           <div className="form-check">

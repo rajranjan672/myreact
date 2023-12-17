@@ -15,10 +15,21 @@
     
 } */
 
-.card{
+.home {
+    width: 100vw !important;
+    height: 100vh !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('https://images.unsplash.com/photo-1702659610398-58d3fb3f65f2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.home .card{
+    background-color: #ccf0ee;
     min-height: 200px !important;
 }
-.card:hover{
+.home .card:hover{
+    background-color: #eec7e4;
     transform: scale(1.1);
 }
 
