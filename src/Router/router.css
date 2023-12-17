@@ -1,7 +1,8 @@
 .navbar{
     position: sticky !important ;
-    background-color: rgb(102, 112, 199);
-    width: 100%;
+    background-color: rgb(236, 144, 183);
+
+    /* width: 100%; */
     
 }
 
@@ -42,6 +43,7 @@
     padding: 5px;
     color: white !important;
     text-decoration: none;
+    z-index: 999 !important;
     
     
 }
@@ -62,7 +64,7 @@
 }
 
  .active{
-    color:  rgb(243, 44, 233) !important;
+    color:  rgb(44, 243, 210) !important;
      /* border-bottom: 2px solid rgb(218, 34, 34) !important;   */
     font-weight: 500 !important;
 }
@@ -149,7 +151,7 @@
       height: calc(100vh - 60px);
       transition: all 0.3s ease-in;
       overflow: hidden;
-      z-index: 9999 !important;
+      z-index:  9 !important;
     }
   
     .nav-elements.active {
@@ -165,6 +167,7 @@
     .nav-elements ul li {
       margin-right: unset;
       margin-top: 22px;
+      z-index: 10 !important;
     }
   }
 

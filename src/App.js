@@ -18,26 +18,18 @@ import { useNavigate, BrowserRouter, Route, Routes, Outlet, Navigate } from "rea
 // import UseEffect from "./components/useeffect/useEffect";
 // import UseState1 from "./components/state/UseState1";
 // import UseState2 from "./components/state/UseState2";
-import Home from "./Router/Home";
-import Profile from "./Router/Profile";
-import Error from "./Router/Error";
-import Navbar from "./Router/Navbar";
-import "./Router/router.css"
 import axios from 'axios';
 import { autocompleteClasses, CardActionArea, CssBaseline, Switch } from '@mui/material';
 import { blue, pink } from '@mui/material/colors';
-import IntegrationNotistack from './Plans/Plans';
-import NewPlan from './Login/NewPlan';
-import About from './Router/About';
 import Register from './Login/Register';
-import Footer from './Router/Footer';
 import { Paper } from '@material-ui/core';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import "@fontsource/roboto";
 import "../src/index.css";
 import "./App.css";
 import Login from './Login/Login';
-import UpdateBook from './Plans/UpdateBook';
+import UpdateBook from './Login/UpdateBook';
+import Home from './Login/Home';
 
 const DUMMY_EXPENSES = [
   { id: "e1", title: "Groceries", amount: "20.40", date: new Date() },
@@ -111,31 +103,22 @@ const a = axios.defaults.withCredentials = true
   return (
     
     <>
-    <div className='body'>
+    <div className=''>
 
       {/* <ImageSlider slides={SliderData} /> */}
       
      <BrowserRouter>
     <div>
 
-      <Navbar />
       
 </div>
       <Routes>
        <Route path="/" element={<Navigate to="/home"/>} />
-        <Route path="/home" defaults element={<IntegrationNotistack />} />
+        <Route path="/home" defaults element={<Home />} />
         <Route path='/login' element={<Login />}  />
         <Route path='/edit-plan/:id' element={<UpdateBook />} />
         
-
-        {/* <Route path="/" element={<IntegrationNotistack />} /> */}
-        <Route path="/profile/:name" element={<Profile />} />
-        <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/*" element={<Error />} />
-        
         
       </Routes>
 

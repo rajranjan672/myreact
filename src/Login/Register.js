@@ -8,6 +8,7 @@ const Register = () => {
         username: "",
         email: "",
         password: "",
+        gender: ""
     })
 
     const navigate = useNavigate()
@@ -30,9 +31,8 @@ const Register = () => {
 
   return (
     <>
-    <div className='register'>
-    <section className="h-100 gradient-form" style={{backgroundClip: '#eee'}}>
-    <div className="container py-3 h-100">
+    <div className='register  gradient-form'>
+    <div className="container py-3">
       <div className="row d-flex justify-content-center align-items-center h-100">
         <div className="col-xl-10">
           <div className="card rounded-3 text-black">
@@ -65,6 +65,22 @@ const Register = () => {
                         setData({...data, [e.target.name]: e.target.value })}
                          required />
                     </div>
+
+                      <div>
+          <div className="form-check">
+            <input className="form-check-input" type="radio" name="gender" id="gender" onChange={(e) => setData({...data, [e.target.name]: "Female"})}/>
+            <label className="form-check-label" htmlFor="gender">
+            Female
+            </label>
+          </div>
+          <div className="form-check">
+            <input className="form-check-input" type="radio" name="gender" id="gender" value="Male" onChange={(e) => setData({...data, [e.target.name]: "Male"})} />
+            <label className="form-check-label" htmlFor="gender">
+            Male
+            </label>
+          </div>
+
+</div>
   
                     <div className="text-center pt-1 mb-5 pb-1">
                       <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register</button>
@@ -75,10 +91,7 @@ const Register = () => {
                       <p className="mb-0 me-2">Don't have an account?</p>
                       <button type="button" className="btn btn-outline-danger" onClick={Login}>Login</button>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Default checkbox</label>
-                      </div>
+      
                   </form>
   
                 </div>
@@ -97,7 +110,6 @@ const Register = () => {
     </div>
     </div>
     </div>
-    </section>
     </div>
    
   </>

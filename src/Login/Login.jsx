@@ -53,18 +53,17 @@ const Login = () => {
 
   return (
     <>
-    <div className='register'>
-    <section className="h-100 gradient-form" style={{backgroundClip: '#eee'}}>
-    <div className="container py-3 h-100">
-      <div className="row d-flex justify-content-center align-items-center h-100">
-        <div className="col-xl-10">
+    <div className="register gradient-form container-fluid">
+  
+
+      <div className="row d-flex justify-content-center align-items-center">
+        <div className="col-xl-10 mt-4">
           <div className="card rounded-3 text-black">
             <div className="row g-0">
               <div className="col-lg-6">
                 <div className="card-body p-md-5 mx-md-4">
   
                   
-  
                   <form onSubmit={sub}>
                     <p>Please Login</p>
 
@@ -111,8 +110,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
-  </section>
     </div>
    
     </>

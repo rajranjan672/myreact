@@ -23,9 +23,57 @@ import { SnackbarProvider, useSnackbar } from 'notistack';
 import '../Plans/card.css'
 import { ExpandMoreOutlined, ExpandMoreRounded } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
+import { BarChart } from '@mui/x-charts';
 // media: {
 //   height: 70,
 //   paddingTop: '56.25%', // 16:9
+
+const chartSetting = {
+  yAxis: [
+    {
+      label: 'rainfall (mm)',
+    },
+  ],
+  width: 500,
+  height: 300,
+};
+const dataset = [
+  {
+    paris: 57,
+    newYork: 86,
+    seoul: 21,
+    month: 16,
+  },
+  {
+    paris: 52,
+    newYork: 78,
+    seoul: 28,
+    month: 17,
+  },
+  {
+    paris: 53,
+    newYork: 106,
+    seoul: 80,
+    month: 18,
+  },
+  {
+    paris: 56,
+    newYork: 92,
+    seoul: 57,
+    month: 19,
+  },
+  {
+    paris: 69,
+    newYork: 92,
+    seoul: 47,
+    month: 20,
+  },
+ 
+  
+  
+];
+
+const valueFormatter = (value) => `${value}mm`;
 // },
  const Plans = () => {
 
@@ -229,6 +277,7 @@ const handleChange =(event) => {
 
   return (
     <>
+    <div className="plans">
     <div className='container-fluid'>
       <div className='row'>
       <FormGroup className='col-2'>
@@ -240,13 +289,14 @@ const handleChange =(event) => {
 
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
+    <div className='container'>
      
 
     <NewPlan getData ={getplans()} />
+    
     <div className='inputss'>
     <input className='inputt' type="text"  placeholder='Search plans' onChange={event => {setQuery(event.target.value)}} />
     </div>
-    <div className='container-fluid'>
                 <div className="row">
                   <div className=''>
                     
@@ -259,7 +309,7 @@ const handleChange =(event) => {
         return plan;
       }}).map((plan) => {
             return(
-       <Card key={plan.id} className='car   col-10 col-sm-5 col-md-5 col-lg-3 bg-primary my-1 py-1 mx-2 '>
+       <Card key={plan.id} className='car   col-11 col-sm-5 col-md-5 col-lg-3 bg-primary my-1 py-1 mx-2 '>
        <Avatar sx={{ bgcolor: avatarBgColor(plan) }} >
             {plan.title.charAt(0).toUpperCase()}
           </Avatar>
@@ -293,19 +343,19 @@ const handleChange =(event) => {
           </div>
           
           <CardActions className='d-flex float-right'>
-        <ExpandMore
+        {/* <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
           <ExpandMoreRounded />
-        </ExpandMore>
+        </ExpandMore> */}
 
         </CardActions>
         
       
-      <Collapse in={expanded}>
+      {/* <Collapse in={expanded}>
         
         <CardContent  className='contents' >
 
@@ -315,7 +365,7 @@ const handleChange =(event) => {
           </Typography>
         </CardContent>
         </Collapse>
-      
+       */}
        
     </Card>
     
@@ -334,7 +384,69 @@ const handleChange =(event) => {
     </div>
     </ThemeProvider>
     </div>
+    <div className="row">
+    <button className="border-none col-auto mx-2 px-3 badge rounded-pill text-bg-primary">Email</button>
+<button className="col-auto mx-2 px-3 badge rounded-pill text-bg-secondary">Secondary</button>
+<button className="col-auto mx-2 px-3 badge rounded-pill text-bg-success">Success</button>
+<button className="col-auto mx-2 px-3 badge rounded-pill text-bg-danger">Danger</button>
+<button className="col-auto mx-2 px-3 badge rounded-pill text-bg-warning">Warning</button>
+<button className="col-auto mx-2 px-3 badge rounded-pill text-bg-info">Info</button>
+<button className="col-auto mx-2 px-3 badge rounded-pill text-bg-light">Light</button>
+<button className="col-auto mx-2 px-3 badge rounded-pill text-bg-dark">Dark</button>
     </div>
+
+<div className="row ">
+      <div className="card col-10 col-sm-8 col-md-7 my-3 mx-auto p-0">
+        <h3 className='font-bold'>Analytics</h3>
+<div className='d-flex justify-content-between my-2'>
+<button className="col btn bg-dark text-white me-1 ">All analytics</button>
+        <button className="col btn bg-dark text-white me-1">Activities</button>
+        <button className="col btn bg-dark text-white me-1">Desktop</button>
+</div>
+
+        <div className="col-12 bg-dark">
+        <div className=" text-white   d-flex justify-content-between">
+        <h4 className=" rounded-pill">All Activity</h4>
+
+          <button className=" rounded-pill">Activity</button>
+
+        </div>
+
+       
+        <BarChart className='text-white'
+      dataset={dataset}
+      xAxis={[{ scaleType: 'band', dataKey: 'month'  }]}
+      series={[{ dataKey: 'seoul', label: 'Seoul rainfall', valueFormatter }]}
+      // layout="horizontal"
+      {...chartSetting}
+    />
+        </div>
+       
+        <div className="col-10 col-sm-10 col-md-10 bg-light my-2 d-flex justify-content-between">
+        <i class=" ps-2 my-auto bi bi-display"></i>
+          <p className='my-2'>Desktop Activities</p>
+          <p className='pe-2 my-auto'>200k</p>
+          </div>
+        <div className="col-10 col-sm-10 col-md-10 bg-light my-2  d-flex justify-content-between">
+        <i class="ps-2 my-auto bi bi-phone"></i>
+          <p className='my-2'>Mobile Activities</p>
+          <p className='pe-2 my-auto'>200k</p>
+
+          </div>
+        <div className="col-10 col-sm-10 col-md-10 bg-light my-2  d-flex justify-content-between">
+        <i class="ps-2 my-auto bi bi-tablet"></i>
+         <p className='my-2'>Pad</p>
+         <p className='pe-2 my-auto'>200k</p>
+
+          </div>
+      </div>
+    </div>
+</div>
+    </div>
+    
+    
+
+    
 
   </>
   )
