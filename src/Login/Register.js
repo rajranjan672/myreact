@@ -66,6 +66,7 @@ const Register = () => {
                       onChange={(e) => 
                         setData({...data, [e.target.name]: e.target.value })}
                          required />
+                         <span>Must atleast 8 charactors including Caps,small, num & special chr.</span>
                     </div>
                     
                     <div className="form-outline mb-4">
@@ -74,6 +75,8 @@ const Register = () => {
                       onChange={(e) => 
                         setData({...data, [e.target.name]: e.target.value })}
                          required />
+                         <span>Must atleast 10 numbers</span>
+
                     </div>
                     <div>
                     <label style={{color:"white"}}  htmlFor="city">Country</label>
@@ -94,7 +97,9 @@ const Register = () => {
                    
 
                       <div>
-          <div className="form-check">
+                        
+          <div className="form-check mt-2">
+            <h5 className='p-0 mx-0'>Gender</h5>
             <input className="form-check-input" type="radio" name="gender" id="gender" onChange={(e) => setData({...data, [e.target.name]: "Female"})}/>
             <label className="form-check-label" htmlFor="gender">
             Female
