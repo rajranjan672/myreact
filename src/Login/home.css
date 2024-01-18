@@ -17,7 +17,7 @@
 
 .home {
     width: 100vw !important;
-    height: 100vh !important;
+    height: fit-content !important;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;

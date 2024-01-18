@@ -3,6 +3,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./home.css"
+import PhotoUploadForm from './PhotoUploadForm';
+import UserList from './UserList';
+import YourComponent from './PhotoUploadForm';
 const Home = () => {
     const [data, setData] = useState([])
     const navigate = useNavigate()
@@ -19,7 +22,7 @@ const Home = () => {
     const gett = async() => {
         try{ const ress = await axios.get("http://localhost:3001/api/user/get",  {withCredentials: true} )
           setData(ress.data)
-          console.log(ress.data)
+          // console.log(ress.data)
      } catch {
           navigate("/login")
      }
@@ -28,6 +31,12 @@ const Home = () => {
     <>
     <div className="home">
     <div className='container'>
+      <PhotoUploadForm />
+      {/* <YourComponent /> */}
+      <div>
+      <UserList />
+
+      </div>
         <div className='row'>
 
             <div className="mt-5">
