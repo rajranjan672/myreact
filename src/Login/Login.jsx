@@ -2,13 +2,12 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./register.css"
-const Login = () => {
+const Login = (props) => {
 
     const [data, setData] = useState({
         email: "",
         password: "",
     })
-    const [data1, setData1] = useState({email: ''})
  
 
     const navigate = useNavigate()
@@ -17,34 +16,22 @@ const Login = () => {
         
         e.preventDefault()
          axios.post("http://localhost:3001/api/user/login", data, {withCredentials : true}).then((resp, rej) => {
-        //   setData(ress.data)
-        navigate("/home")
-        .then(   async() => {
-          try{ const ress = await axios.get("http://localhost:3001/api/user/get",  {withCredentials: true} )
-            setData1(ress.data)
-            console.log(ress.data)
-       } catch {
-           navigate("/login")
-       }
-       }
-      )
+        navigate("/cars")
+       
             if(!resp) {
             alert('please enter valid email or password')
-
-                // console.log('res',resp.data)
 
             } else  {
 
             }
-            
-            
 
+         }).then(() => {
+          {props.user()}
          })
 
          
         
         
-        //  navigate("/login")
     }
 
     const Register = () => {

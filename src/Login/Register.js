@@ -5,12 +5,10 @@ import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
     const [data, setData] = useState({
-        username: "",
+        name: "",
         email: "",
         password: "",
-        gender: "",
-        phone: "",
-        city: ""
+        
     })
 
     const navigate = useNavigate()
@@ -18,8 +16,7 @@ const Register = () => {
 
     const sub = async(e) => {
         e.preventDefault()
-         axios.post("http://localhost:3001/api/user/createuser", data).then((resp) => {
-        //   setData(ress.data)
+         axios.post("http://localhost:3001/api/user/register", data).then((resp) => {
 
             console.log('res',resp.data)
 
@@ -47,8 +44,8 @@ const Register = () => {
                     <p>Please Register your account</p>
 
                     <div className="form-outline">
-                      <label className="form-label" htmlFor="username">Username</label>
-                      <input type="text" name='username' id="username" className="form-control" required
+                      <label className="form-label" htmlFor="name">Username</label>
+                      <input type="text" name='name' id="name" className="form-control" required
                         placeholder="Username" onChange={(e) => 
                         setData({...data, [e.target.name]: e.target.value })} />
                     </div>
@@ -68,58 +65,12 @@ const Register = () => {
                          required />
                          <span>Must atleast 8 charactors including Caps,small, num & special chr.</span>
                     </div>
-                    
-                    <div className="form-outline mb-4">
-                      <label className="form-label" htmlFor="phone">Phone</label>
-                      <input type="number" id="phone" name='phone' className="form-control" placeholder='phone'
-                      onChange={(e) => 
-                        setData({...data, [e.target.name]: e.target.value })}
-                         required />
-                         <span>Must atleast 10 numbers</span>
-
-                    </div>
-                    <div>
-                    <label style={{color:"white"}}  htmlFor="city">Country</label>
-
-                  <select class="form-select" aria-label="Default select example"
-                    name="city" 
-                    id='city'
-                  onChange={(e) => 
-                    setData({...data, [e.target.name]: e.target.value})}
-
-                  >
-                    <option selected value="">Open this select menu</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Pune">Pune</option>
-                    <option value="Surat">Surat</option>
-                  </select>
-                    </div>
-                   
-
-                      <div>
-                        
-          <div className="form-check mt-2">
-            <h5 className='p-0 mx-0'>Gender</h5>
-            <input className="form-check-input" type="radio" name="gender" id="gender" onChange={(e) => setData({...data, [e.target.name]: "Female"})}/>
-            <label className="form-check-label" htmlFor="gender">
-            Female
-            </label>
-          </div>
-          <div className="form-check">
-            <input className="form-check-input" type="radio" name="gender" id="gender" value="Male" onChange={(e) => setData({...data, [e.target.name]: "Male"})} />
-            <label className="form-check-label" htmlFor="gender">
-            Male
-            </label>
-          </div>
-
-</div>
   
-                    <div className="text-center pt-1 mb-5 pb-1">
+                    <div className="text-center pt-1 mb-3 pb-1">
                       <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register</button>
-                      {/* <a className="text-muted" href="#!">Forgot password?</a> */}
                     </div>
   
-                    <div className="d-flex align-items-center justify-content-center pb-4">
+                    <div className="d-flex align-items-center justify-content-center ">
                       <p className="mb-0 me-2">Don't have an account?</p>
                       <button type="button" className="btn btn-outline-danger" onClick={Login}>Login</button>
                     </div>
