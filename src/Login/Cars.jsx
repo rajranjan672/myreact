@@ -2,6 +2,7 @@ import { Paper } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import NewCar from './NewCar';
 const Cars = (props) => {
   
   const [cars, setCars] = useState([])
@@ -20,6 +21,8 @@ const Cars = (props) => {
   return (
     <>
     <div className="container-fluid">
+    <NewCar get={gett} />
+
       <div className="row">
         {cars.map((item) => {
           return (

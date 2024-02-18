@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import "./Navbar.css"
+import { Avatar } from '@mui/material'
 
 const NavBar = (props) => {
     const navigate = useNavigate()
@@ -43,9 +44,12 @@ const NavBar = (props) => {
 
          </ul>
          </div>
-         <div className=' justify-content-end col-1'>
-        <div className='card'>
-        <p className=' text-capitalize'>{props.user.name}</p>
+         <div className=' justify-content-end col-2'>
+        <div className='card d-flex justify-content-between'>
+          <Avatar>
+
+          </Avatar>
+        <span className=' text-capitalize'>{props.user.name}</span>
         
         </div>
 
