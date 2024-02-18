@@ -89,8 +89,6 @@ const NewCar = ({get}) => {
           </div>
        
 
-          {/* <label htmlFor="photo">Upload Photo:</label> */}
-        {/* <input type="file" id="photo" name="photo" accept="image/jpeg, image/jpg, image/png" onChange={handleFileChange} required /> */}
           <div>
           <button type='submit' className='btn btn-primary mx-2'>Submit</button>
           <button onClick={handleClose}>Cancle</button>
