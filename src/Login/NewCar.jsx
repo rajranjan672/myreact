@@ -53,7 +53,6 @@ const NewCar = ({get}) => {
         Add Car
       </Button>
     </div>
-    
       <Dialog
         open={open}
         TransitionComponent={Transition}
