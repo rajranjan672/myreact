@@ -33,8 +33,6 @@ const Cars = (props) => {
               <buton className="btn btn-primary">Rs {item.price}</buton>
 
               </div>
-
-
             </div>
           )
         })}
