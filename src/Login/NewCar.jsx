@@ -80,7 +80,7 @@ const NewCar = ({get}) => {
           </div>
 
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" name='price' id="price" placeholder="name@example.com"
+            <input type="number" class="form-control" name='price' id="price" placeholder="name@example.com"
             onChange={(e) => 
               setData({...data, [e.target.name]: e.target.value})} />
               
