@@ -15,8 +15,6 @@ const NavBar = (props) => {
           if(!resp) {
           alert('please enter valid email or password')
 
-          } else  {
-
           }
 
        }).then(() => {
