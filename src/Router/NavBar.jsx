@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import "./Navbar.css"
-import { Avatar } from '@mui/material'
 
 const NavBar = (props) => {
     const navigate = useNavigate()
