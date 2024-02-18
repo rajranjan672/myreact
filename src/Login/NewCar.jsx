@@ -60,7 +60,7 @@ const NewCar = ({get}) => {
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+        <DialogTitle>{"New Car"}</DialogTitle>
         <DialogContent>
         <form class="row g-3 needs-validation" onSubmit={sub}>
         <div className="form-floating">
