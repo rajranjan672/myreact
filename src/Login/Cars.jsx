@@ -30,7 +30,7 @@ const Cars = (props) => {
               <h4 className='text-center text-uppercase text-danger'>{item.model}</h4>
               <p> Make: {item.make}</p>
               <div className="col-2 mb-2">
-              <buton className="btn btn-primary"> RS: {item.price}</buton>
+              <buton className="btn btn-primary">Rs {item.price}</buton>
 
               </div>
 
