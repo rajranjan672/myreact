@@ -44,18 +44,16 @@ const NavBar = (props) => {
 
          </ul>
          </div>
-         <div className=' justify-content-end col-2'>
-        <div className='card d-flex justify-content-between'>
-          <Avatar>
 
-          </Avatar>
-        <span className=' text-capitalize'>{props.user.name}</span>
-        
+         <ul>
+            <div className="dropdown" style={{float: "right"}}>
+          <button className="dropbtn btn btn-danger text-capitalize"> <i className="bi bi-person-circle"> {props.user.name}</i></button>
+          <div className="dropdown-content">
+          <button type="button" className="btn btn-warning w-100" onClick={sub}>Logout<i className="bi bi-arrow-{data.username}"></i></button>
+          </div>
         </div>
-
-
-    </div>
-    <button className="btn btn-secondary" onClick={sub}>Logout</button>
+            </ul>
+     
 
     </div>
     
