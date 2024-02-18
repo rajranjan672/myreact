@@ -31,7 +31,6 @@ const Cars = (props) => {
               <p> Make: {item.make}</p>
               <div className="col-2 mb-2">
               <buton className="btn btn-primary">Rs {item.price}</buton>
-
               </div>
             </div>
           )
