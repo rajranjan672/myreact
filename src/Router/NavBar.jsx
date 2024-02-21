@@ -6,6 +6,32 @@ import "./Navbar.css"
 const NavBar = (props) => {
     const navigate = useNavigate()
 
+    const [data, setData] = useState([])
+    const [auth, setAuth] = useState(false)
+     
+   
+  useEffect(() => {
+    gett()
+  }, [setData])
+  
+  
+  const gett = async(req,res) => {
+    try {
+      await axios.get("http://localhost:3001/api/user/get", {withCredentials: true}).then((ress) => {
+      setData(ress.data.user)
+      console.log(ress.data.user)
+    }).then(() => {
+      setAuth(true)
+      console.log(auth)
+  
+    })
+  
+    } catch {
+      navigate("/login")
+    }
+    
+  }
+
     const sub = async(e) => {
         
       e.preventDefault()
@@ -17,7 +43,7 @@ const NavBar = (props) => {
           }
 
        }).then(() => {
-        {props.user()}
+        // {props.user()}
        })
 
        
@@ -43,9 +69,9 @@ const NavBar = (props) => {
 
          <ul>
             <div className="dropdown" style={{float: "right"}}>
-          <button className="dropbtn btn btn-danger text-capitalize"> <i className="bi bi-person-circle"> {props.user.name}</i></button>
+          <button className="dropbtn btn btn-danger text-capitalize"> <i className="bi bi-person-circle"> {data.name}</i></button>
           <div className="dropdown-content">
-          <button type="button" className="btn btn-warning w-100" onClick={sub}>Logout<i className="bi bi-arrow-{data.username}"></i></button>
+          <button type="button" className="btn btn-warning w-100 " onClick={sub}>Logout<i className="bi bi-arrow-{data.username}"></i></button>
           </div>
         </div>
             </ul>

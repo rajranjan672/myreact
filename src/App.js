@@ -52,13 +52,13 @@ const gett = async(req,res) => {
     
     <>
     <div>
-      {auth && (<NavBar user = {data}/>)}
+      {auth && (<NavBar/>)}
     
       <Routes>
        <Route path="/" element={<Navigate to="/home"/>} />
-        <Route path="/cars" defaults element={<Cars user = {data} />} />
-        <Route path='/login' element={<Login user = {data}/>}  />
-        <Route path='/about' element={<About user = {data}/>}  />
+        <Route path="/cars" defaults element={<Cars />} />
+        <Route path='/login' element={<Login/>}  />
+        <Route path='/about' element={<About />}  />
 
         
         <Route path="/register" element={<Register />} />
